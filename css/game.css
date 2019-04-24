@@ -1,0 +1,457 @@
+body {
+  box-sizing: border-box;
+  background-color: rgb(21, 21, 21);
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+/*-----menu button-------*/
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.btn-line {
+  width: 28px;
+  height: 4px;
+  border-radius: 20%;
+  margin: 0 0 5px 0;
+  background: #fff;
+  transition: all 0.5s ease-out;
+}
+
+.btn-line:nth-child(2) {
+  width: 20px;
+
+}
+
+/*------ rotate into X with menu lines-----*/
+
+.close {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-out;
+}
+
+/*line 1 -rotate*/
+.close .btn-line:nth-child(1) {
+  background: #eece1a;
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+/*line 2 - hide*/
+.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+/*line 3 - rotate*/
+.close .btn-line:nth-child(3) {
+  background: #eece1a;
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/*Menu Overlay*/
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* opacity: .8; */
+  visibility: hidden;
+}
+
+.menu .show {
+  visibility: visible;
+}
+
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-nav {
+  margin: 0;
+  padding: 0;
+  background: #585555ea;
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.5s ease-out;
+}
+
+.menu .show {
+  transform: translate3d(0, 0, 0);
+}
+
+.menu-branding {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(75, 73, 77, 0.8);
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.5s ease-out;
+}
+
+.menu .show {
+  transform: translate3d(0, 0, 0);
+}
+
+.portrait {
+  width: 200px;
+  height: 200px;
+  background: url(../gambar/photo.jpg);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: solid 4px #eece1a;
+}
+
+.menu .show {
+  transform: translate3d(0, 0, 0);
+}
+
+.nav-link {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 450;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.nav-link:hover {
+  color: #eece1a;
+  transition: all 0.5s ease-out;
+}
+
+.nav-item {
+  transform: translate3d(600px, 0, 0);
+  transition: all 0.5s ease-out;
+}
+
+.menu .show {
+  transform: translate3d(0, 0, 0);
+}
+
+/* delay each nav item slide by 0.1s */
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.nav-item:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* -------------------------------------------------------------- */
+
+/* main about */
+main {
+  padding: 4rem;
+  /* height: 100%; */
+  min-height: calc(100vh - 25px);
+}
+
+.lg-heading {
+  margin-top: -40px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+.text-secondary {
+  color: #eece1a;
+}
+
+.sm-heading {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* -----game------ */
+
+.container {
+  text-align: center;
+
+}
+
+.area-komputer {
+  margin: 15px auto;
+  width: 560px;
+  height: 250px;
+  background-color: #eece1a;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(to bottom,
+    rgb(225, 225, 225) 3%,
+    rgb(21, 21, 21) 100%);
+}
+
+.score-komputer,
+.score-player {
+  font-size: 50px;
+  text-align: center;
+  color: #f1c86f;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 0 2px 4px rgb(221, 165, 11);
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.area-player {
+  margin: 0 auto;
+  width: 560px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(to bottom,
+    rgb(21, 21, 21) 3%,
+    rgb(255, 255, 255) 100%);
+}
+
+.info {
+  width: 200px;
+  height: 60px;
+  text-shadow: 0 2px 6px #c4a703;
+  color: #eece1a;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: unset;
+  font-weight: 600;
+  margin: 0 auto;
+}
+
+.area-player li {
+  display: inline-block;
+  margin: 35px 20px 0 20px;
+}
+
+img {
+  width: 130px;
+  height: 130px;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-komputer {
+  padding: 18px 0 15px 0;
+}
+
+.gajah,
+.orang,
+.semut,
+.reload {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+
+.gajah:active,
+.semut:active,
+.orang:active {
+  transition: 0.6s ease-out;
+  transform: translateY(-50px);
+}
+
+.reload {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  transition: 0.8s ease-out;
+}
+
+.reload:active {
+  transform: rotate(720deg);
+}
+
+/* ------- footer---------- */
+
+#main-footer {
+  position: absolute;
+  right: 35%;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  width: 28%;
+  height: 25px;
+  background: rgb(21, 21, 21);
+  border-top: 1px solid rgb(224, 221, 35);
+  border-radius: 15%;
+  color: #fff;
+}
+
+/* ---------------layout Setting----------------- */
+
+/* widescreens XL */
+@media screen and (min-width: 1171px) {}
+
+/* destops &laptops LG */
+@media screen and (min-width: 769px) and (max-width: 1170px) {}
+
+/* tablets & small Laptops MD */
+@media screen and (max-width: 600px) {
+  main {
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-size: 45px;
+  }
+
+
+  .sm-heading {
+    font-weight: 400;
+    padding: 0 0 0 0;
+    font-size: 30px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 25px;
+  }
+
+  .menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .menu .show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .menu .show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .portrait {
+    background: url(../gambar/bw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: solid 3px #eece1a;
+    width: 130px;
+    height: 130px;
+  }
+
+  .container {
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .area-komputer,
+  .area-player {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .area-player {
+
+    display: inline-block;
+    margin-top: -15px;
+  }
+
+  .img {
+    position: absolute;
+
+  }
+
+  .info {
+    font-size: 30px;
+  }
+
+  .score-komputer,
+  .score-player {
+    font-size: 35px;
+  }
+
+  .img-komputer,
+  .gajah,
+  .orang,
+  .semut,
+  .reload {
+    width: 65px;
+    height: 65px;
+  }
+
+  .reload {
+    width: 40px;
+    height: 40px;
+  }
+
+  .area-player li {
+    margin: 10px 5px 0 5px;
+  }
+
+
+}
